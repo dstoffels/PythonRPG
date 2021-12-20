@@ -8,7 +8,10 @@ Extra Credit Points: 5
 You are Hercules, the greatest of the Greek Heroes! You have been tasked by King
 Eurystheus to slay the vicious Nemean Lion, defeat the impossible nine-headed
 Lernaean Hydra, and capture the guard dog of the underworld—Cerberus.
-Features:As a developer, I want to make at least five commits on GitHub with descriptive
+
+Features:
+
+As a developer, I want to make at least five commits on GitHub with descriptive
 messages.
 
 As a user, I want an engaging story to be told using print() statements.
