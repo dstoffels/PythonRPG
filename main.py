@@ -1,24 +1,22 @@
-import threading
-from InputHandling.handleInput import handleUserInput
+from InputHandling.handleInput import runInputThread
 from constants import MAIN_MENU, MAIN_MENU_ERR_MSG, NEW_GAME_INTRO
 from helpers import validateIntInput
 from locations.locations import getLocations
+from gameState import GameState
 
-gameActive = True #global
+gameActive = True # will an entire game state need to be stored in a class object?
 locationMap = getLocations()
 startingLocation = (1,6)
 
-def runInputThread():
-  def userInput():
-    while gameActive:
-      handleUserInput()
-
-  threading.Thread(target= userInput).start()
+def Start():
+  while True:
+    displayMainMenu()
 
 def RunGame():
+  state = GameState(True)
   print(NEW_GAME_INTRO)
   print(locationMap[startingLocation].displayDescription(locationMap))
-  runInputThread()
+  runInputThread(state)
 
 def displayMainMenu():
   userInput = validateIntInput(MAIN_MENU)
