@@ -1,4 +1,4 @@
-class location:
+class location: #FIXME: change ctor to accept self, coords, title, description. Add currentEntities(). must also change locations list & getAvailableDirectionsStr
   coordinates = (0,0)
   roomDescription = ''
 
@@ -17,9 +17,9 @@ class location:
       if(coord == (self.coordinates[0] + 1, self.coordinates[1])):
         directions += 'South, '
       if(coord == (self.coordinates[0], self.coordinates[1] - 1)):
-        directions += 'West.'
+        directions += 'West, '
 
     return directions
 
   def displayDescription(self, locationMap):
-    return f'{self.roomDescription}\n{self.getAvailableDirectionsStr(locationMap)}'
+    return f'\n{self.roomDescription}\nObvious paths: {self.getAvailableDirectionsStr(locationMap)}\n'
