@@ -13,7 +13,7 @@ def Start():
     displayMainMenu()
 
 def RunGame():
-  state = GameState(True)
+  state = GameState()
   print(NEW_GAME_INTRO)
   print(locationMap[startingLocation].displayDescription(locationMap))
   runInputThread(state)

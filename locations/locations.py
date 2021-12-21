@@ -1,3 +1,4 @@
+from typing import Dict
 from locations.Location import location
 
 # FIXME: update to a list of locations with coords, title, description OR a dict with coords as key?

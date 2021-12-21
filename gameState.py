@@ -1,5 +1,5 @@
 class GameState:
   isActive = False
 
-  def __init__(self, isActive):
-    self.isActive = isActive
+  def __init__(self):
+    self.isActive = True
