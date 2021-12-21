@@ -1,8 +1,9 @@
 import threading
 from constants import MAIN_MENU, MAIN_MENU_ERR_MSG
 from helpers import validateIntInput
+from locations import getLocations
 
-
+locationMap = getLocations()
 gameActive = True #global
 
 def runInputThread():
@@ -27,8 +28,11 @@ def displayMainMenu():
     case 3:
       print('Until next time, hero')
       exit()
+    case 0:
+      print(locationMap[1,6].coordinates)
     case _:
       print(MAIN_MENU_ERR_MSG) #FIXME: need input validation
 
 
-displayMainMenu()
+print(locationMap[1,6].displayDescription(locationMap))
+# displayMainMenu()

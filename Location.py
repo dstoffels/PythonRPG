@@ -1,28 +1,25 @@
-from locations import LOCATIONS
-
-class Location:
-  coordinates = [0, 0]
+class location:
+  coordinates = (0,0)
   roomDescription = ''
 
   def __init__(self, coords, description):
     self.coordinates = coords
     self.roomDescription = description
   
-  def getAvailableDirectionsStr(self):
+  def getAvailableDirectionsStr(self, locationMap):
     directions = ''
 
-    for coord in LOCATIONS.keys():
-      if(coord[0] == self.coordinates[0] - 1):
+    for coord in locationMap.keys():
+      if(coord == (self.coordinates[0] - 1, self.coordinates[1])):
         directions += 'North, '
-      if(coord[1] == self.coordinates[1] + 1):
+      if(coord == (self.coordinates[0], self.coordinates[1] + 1)):
         directions += 'East, '
-      if(coord[0] == self.coordinates[0] + 1):
+      if(coord == (self.coordinates[0] + 1, self.coordinates[1])):
         directions += 'South, '
-      if(coord[1] == self.coordinates[1] - 1):
+      if(coord == (self.coordinates[0], self.coordinates[1] - 1)):
         directions += 'West.'
 
     return directions
 
-  def displayDescription(self):
-    return f'{self.roomDescription}\n{self.getAvailableDirectionsStr()}' 
-
+  def displayDescription(self, locationMap):
+    return f'{self.roomDescription}\n{self.getAvailableDirectionsStr(locationMap)}'
