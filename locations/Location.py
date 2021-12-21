@@ -5,10 +5,12 @@ W = 'West'
 
 class location: #FIXME: change ctor to accept self, coords, title, description. Add currentEntities(). must also change locations list & getAvailableDirectionsStr
   coordinates = (0,0)
+  title = ''
   roomDescription = ''
 
-  def __init__(self, coords, description):
+  def __init__(self, coords, title = '[Title]', description = 'Description'):
     self.coordinates = coords
+    self.title = title
     self.roomDescription = description
   
   def getPossibleDirections(self, locationMap):
@@ -46,6 +48,9 @@ class location: #FIXME: change ctor to accept self, coords, title, description. 
     
     return outputStr
   
-
   def displayDescription(self, locationMap):
-    return f'\n{self.roomDescription}\nObvious paths: {self.obviousPathsStringBuilder(locationMap)}\n'
+    return f'''
+    {self.title}
+    {self.roomDescription}
+    {self.obviousPathsStringBuilder(locationMap)}
+    '''

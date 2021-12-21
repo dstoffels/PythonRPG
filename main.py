@@ -1,11 +1,10 @@
 from InputHandling.handleInput import runInputThread
 from constants import MAIN_MENU, MAIN_MENU_ERR_MSG, NEW_GAME_INTRO
 from helpers import validateIntInput
-from locations.locations import getLocations
+from locations.locations import LOCATIONS
 from gameState import GameState
 
 gameActive = True # will an entire game state need to be stored in a class object?
-locationMap = getLocations()
 startingLocation = (1,6)
 
 def Start():
@@ -15,7 +14,7 @@ def Start():
 def RunGame():
   state = GameState()
   print(NEW_GAME_INTRO)
-  print(locationMap[startingLocation].displayDescription(locationMap))
+  print(LOCATIONS[startingLocation].displayDescription(LOCATIONS))
   runInputThread(state)
 
 def displayMainMenu():
