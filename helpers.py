@@ -1,4 +1,4 @@
-from constants import OPTIONS_ERR_MSG
+from constants import MAIN_MENU_ERR_MSG
 
 def aOrAn(word):
   VOWELS = ['a','e','i','o','u']
@@ -24,7 +24,7 @@ def validateIntInput(prompt):
       response = int(input(prompt))
       return response
     except:
-      prompt = OPTIONS_ERR_MSG
+      prompt = MAIN_MENU_ERR_MSG
 
 # def buildOptionsString():
 #   optionsString = ''

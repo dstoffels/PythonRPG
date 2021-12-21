@@ -1,5 +1,5 @@
 import threading
-from constants import MAIN_MENU
+from constants import MAIN_MENU, MAIN_MENU_ERR_MSG
 from helpers import validateIntInput
 
 
@@ -17,7 +17,7 @@ def runInputThread():
   threading.Thread(target= userInput).start()
 
 def displayMainMenu():
-  userInput = validateIntInput(MAIN_MENU) #FIXME: need int validation
+  userInput = validateIntInput(MAIN_MENU)
 
   match userInput:
     case 1:
@@ -28,7 +28,7 @@ def displayMainMenu():
       print('Until next time, hero')
       exit()
     case _:
-      print('ERROR! ERROR! ERROR!') #FIXME: need input validation
+      print(MAIN_MENU_ERR_MSG) #FIXME: need input validation
 
 
 displayMainMenu()
