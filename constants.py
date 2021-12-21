@@ -6,3 +6,4 @@ Lernaean Hydra, and capture the guard dog of the underworld—Cerberus.
 2) How To Play
 3) Exit
 '''
+OPTIONS_ERR_MSG = 'Select from options 1-3'

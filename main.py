@@ -1,7 +1,7 @@
-from contextlib import ExitStack
 import threading
 from constants import MAIN_MENU
-import threading
+from helpers import validateIntInput
+
 
 gameActive = True #global
 
@@ -17,18 +17,18 @@ def runInputThread():
   threading.Thread(target= userInput).start()
 
 def displayMainMenu():
-  userInput = input(MAIN_MENU)
+  userInput = validateIntInput(MAIN_MENU) #FIXME: need int validation
 
   match userInput:
     case 1:
-      runInputThread()
+      runInputThread() #FIXME: need RunGame function that includes runInputThread
     case 2:
-      print('PLACEHOLDER: game instructions here') #FIXME: need game instructions
+      print('game instructions here') #FIXME: need game instructions
     case 3:
       print('Until next time, hero')
       exit()
     case _:
-      print('PLACEHOLDER: ERROR! ERROR! ERROR!') #FIXME: need input validation
+      print('ERROR! ERROR! ERROR!') #FIXME: need input validation
 
 
-
+displayMainMenu()
