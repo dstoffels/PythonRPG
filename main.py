@@ -1,24 +1,23 @@
 import threading
+from InputHandling.handleInput import handleUserInput
 from constants import MAIN_MENU, MAIN_MENU_ERR_MSG, NEW_GAME_INTRO
 from helpers import validateIntInput
-from locations import getLocations
+from locations.locations import getLocations
 
-locationMap = getLocations()
 gameActive = True #global
+locationMap = getLocations()
+startingLocation = (1,6)
 
 def runInputThread():
   def userInput():
-    global gameActive
-
     while gameActive:
-      i = input('> ')
-      if(i == 'q'):
-        gameActive = False
+      handleUserInput()
 
   threading.Thread(target= userInput).start()
 
 def RunGame():
   print(NEW_GAME_INTRO)
+  print(locationMap[startingLocation].displayDescription(locationMap))
   runInputThread()
 
 def displayMainMenu():
