@@ -14,7 +14,7 @@ Features:
 <!-- As a developer, I want to make at least five commits on GitHub with descriptive
 messages. -->
 
-As a user, I want an engaging story to be told using print() statements.
+<!-- As a user, I want an engaging story to be told using print() statements. -->
 
 As a user, I want Hercules (and each enemy), to have health, attack power, and a
 List of attack names saved in a Dictionary.
