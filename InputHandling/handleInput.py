@@ -2,7 +2,6 @@ import threading
 from InputHandling.commands import COMMANDS
 from gameState import GameState
 
-
 def handleUserInput(gameState: GameState):
   health = gameState.player.currentHP
   # FIXME: need combat status

@@ -22,3 +22,6 @@ def handleMove(direction, state: GameState):
         player.moveWest()
   else:
     print('You cannot go that direction')
+
+def handleLook(gameState: GameState):
+  gameState.player.currentLocation.displayDescription(LOCATIONS)

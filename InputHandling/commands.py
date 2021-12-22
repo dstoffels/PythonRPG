@@ -14,5 +14,7 @@ COMMANDS = {
   'east': lambda state : execute.handleMove(E, state),
   'w': lambda state : execute.handleMove(W, state),
   'west': lambda state : execute.handleMove(W, state),
+  'l': execute.handleLook,
+  'look': execute.handleLook,
 }
 
