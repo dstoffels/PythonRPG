@@ -1,3 +1,8 @@
+N = 'North'
+S = 'South'
+E = 'East'
+W = 'West'
+
 MAIN_MENU = '''
 THE ROAD TO OLYMPUS
 

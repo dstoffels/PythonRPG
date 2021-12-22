@@ -11,8 +11,8 @@ Lernaean Hydra, and capture the guard dog of the underworld—Cerberus.
 
 Features:
 
-As a developer, I want to make at least five commits on GitHub with descriptive
-messages.
+<!-- As a developer, I want to make at least five commits on GitHub with descriptive
+messages. -->
 
 As a user, I want an engaging story to be told using print() statements.
 

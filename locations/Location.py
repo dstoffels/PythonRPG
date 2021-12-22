@@ -1,36 +1,33 @@
-N = 'North'
-S = 'South'
-E = 'East'
-W = 'West'
+from constants import N, S, E, W
 
-class location: #FIXME: change ctor to accept self, coords, title, description. Add currentEntities(). must also change locations list & getAvailableDirectionsStr
-  coordinates = (0,0)
+class location:
+  coords = (0,0)
   title = ''
   roomDescription = ''
 
-  def __init__(self, coords, title = '[Title]', description = 'Description'):
-    self.coordinates = coords
+  def __init__(self, coords = (0,0), title = '[Title]', description = 'Description'):
+    self.coords = coords
     self.title = title
     self.roomDescription = description
   
-  def getPossibleDirections(self, locationMap):
+  def getPossibleDirections(self, locations):
     possibleDirections = []
 
-    for coord in locationMap.keys():
-      if(coord == (self.coordinates[0] - 1, self.coordinates[1])):
+    for coord in locations.keys():
+      if(coord == (self.coords[0] - 1, self.coords[1])):
         possibleDirections.append(N)
-      if(coord == (self.coordinates[0] + 1, self.coordinates[1])):
+      if(coord == (self.coords[0] + 1, self.coords[1])):
         possibleDirections.append(S)
-      if(coord == (self.coordinates[0], self.coordinates[1] + 1)):
+      if(coord == (self.coords[0], self.coords[1] + 1)):
         possibleDirections.append(E)
-      if(coord == (self.coordinates[0], self.coordinates[1] - 1)):
+      if(coord == (self.coords[0], self.coords[1] - 1)):
         possibleDirections.append(W)
 
     return possibleDirections
 
-  def obviousPathsStringBuilder(self, locationMap):
+  def obviousPathsStringBuilder(self, locations):
     outputStr = ''
-    possibleDirections = self.getPossibleDirections(locationMap)
+    possibleDirections = self.getPossibleDirections(locations)
 
     def strHelper(dir, outputStr):
       if(possibleDirections.__contains__(dir)):
@@ -46,11 +43,14 @@ class location: #FIXME: change ctor to accept self, coords, title, description. 
     outputStr += strHelper(E, outputStr)
     outputStr += strHelper(W, outputStr)
     
-    return outputStr
+    return f'Obvious paths: {outputStr}'
   
-  def displayDescription(self, locationMap):
+  def buildDescriptionStr(self, locations):
     return f'''
-    {self.title}
-    {self.roomDescription}
-    {self.obviousPathsStringBuilder(locationMap)}
-    '''
+{self.title}
+{self.roomDescription}
+{self.obviousPathsStringBuilder(locations)}
+'''
+  def displayDescription(self, locations):
+    description = self.buildDescriptionStr(locations)
+    print(description)
