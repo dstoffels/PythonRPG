@@ -1,9 +1,12 @@
 import threading
 from InputHandling.commands import COMMANDS
+from gameState import GameState
 
-prompt = '> '
 
-def handleUserInput(gameState):
+def handleUserInput(gameState: GameState):
+  health = gameState.player.currentHP
+  # FIXME: need combat status
+  prompt = f'[Health: {health}] > ' 
   userInput = str.lower(input(prompt))
 
   try:

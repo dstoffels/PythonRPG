@@ -1,4 +1,4 @@
-from entity import Player
+from entities.player import Player
 from locations.locations import LOCATIONS
 
 STARTING_LOCATION = (1,6)

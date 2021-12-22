@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from locations.location import location
-from locations.locations import LOCATIONS
 
 class Entity(ABC):
   name = ''
