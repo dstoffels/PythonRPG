@@ -1,6 +1,5 @@
 import threading
 from InputHandling.commands import COMMANDS
-from gameState import GameState
 
 prompt = '> '
 
