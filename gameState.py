@@ -3,7 +3,7 @@ from entities.player import Player
 from locations.locations import LOCATIONS
 
 BANDIT = Enemy('Bandit', (3,2))
-NEMEAN_LION = Enemy('Nemean Lion', (4,9))
+NEMEAN_LION = Enemy('Nemean Lion', (3,9))
 LERNEAN_HYDRA = Enemy('Lernaean Hydra', (8,1))
 CERBERUS = Enemy('Cerberus', (8,10))
 STARTING_ENEMIES = []

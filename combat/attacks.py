@@ -1,8 +1,4 @@
 class Attack:
-  name = ''
-  APbonus = 0
-  cooldown = 0
-
   def __init__(self, name, attackPowerBonus, cooldown):
       self.name = name
       self.APbonus = attackPowerBonus

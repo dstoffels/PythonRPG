@@ -1,6 +1,6 @@
 from constants import N, S, E, W
 
-class location:
+class Location:
   coords = (0,0)
   title = ''
   roomDescription = ''
