@@ -1,14 +1,14 @@
 from constants import N, S, E, W
 
 class Location:
-  coords = (0,0)
-  title = ''
-  roomDescription = ''
-
   def __init__(self, coords = (0,0), title = '[Title]', description = 'Description'):
     self.coords = coords
     self.title = title
     self.roomDescription = description
+    self.enemy = None
+
+  def placeEnemy(self, enemy):
+    self.enemy = enemy
   
   def getPossibleDirections(self, locations):
     possibleDirections = []
@@ -44,13 +44,20 @@ class Location:
     outputStr += strHelper(W, outputStr)
     
     return f'Obvious paths: {outputStr}'
+
+  def presentEnemyStrBldr(self):
+    if(self.enemy != None):
+      return f'ALSO HERE: {self.enemy.name}\n'
+    else:
+      return ''
   
   def buildDescriptionStr(self, locations):
     return f'''
 {self.title}
 {self.roomDescription}
 {self.obviousPathsStringBuilder(locations)}
-'''
+{self.presentEnemyStrBldr()}'''
+
   def displayDescription(self, locations):
     description = self.buildDescriptionStr(locations)
     print(description)

@@ -29,5 +29,4 @@ def displayMainMenu():
     case _:
       print(MAIN_MENU_ERR_MSG) #FIXME: need input validation
 
-
 displayMainMenu()
