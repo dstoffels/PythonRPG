@@ -1,7 +1,11 @@
-from combat.weapon import Weapon
+class Weapon:
+  name = ''
+  attackPower = 0
+  
+  def __init__(self, name: str = '', attackPower: int = 0):
+      self.name = name
+      self.attackPower = attackPower
 
-WEAPONS = {
-  'Fists': Weapon('Fists', 3),
-  'Gladius': Weapon('Gladius', 5),
-  'Falx': Weapon('Falx', 10)
-}
+FISTS = Weapon('Fists', 3)
+GLADIUS = Weapon('Gladius', 5)
+FALX = Weapon('Falx', 10)
