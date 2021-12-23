@@ -21,7 +21,11 @@ def handleMove(direction, state: GameState):
       case 'West':
         player.moveWest()
   else:
-    print('You cannot go that direction')
+    print('You cannot go that direction.')
 
 def handleLook(gameState: GameState):
   gameState.player.currentLocation.displayDescription(LOCATIONS)
+
+def handleSelectAttack(attackIndex, gameState: GameState):
+  newAttack = gameState.player.selectAttack(attackIndex)
+  print(f'Switching to {newAttack.name} attack.')

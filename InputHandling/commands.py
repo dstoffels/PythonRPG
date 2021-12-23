@@ -16,5 +16,11 @@ COMMANDS = {
   'west': lambda state : execute.handleMove(W, state),
   'l': execute.handleLook,
   'look': execute.handleLook,
+  '1': lambda state : execute.handleSelectAttack(0, state),
+  'swing': lambda state : execute.handleSelectAttack(0, state),
+  '2': lambda state : execute.handleSelectAttack(1, state),
+  'thrust': lambda state : execute.handleSelectAttack(1, state),
+  '3': lambda state : execute.handleSelectAttack(2, state),
+  'smash': lambda state : execute.handleSelectAttack(2, state),
 }
 
