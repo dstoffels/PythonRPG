@@ -16,7 +16,7 @@ messages. -->
 
 As a user, I want an engaging story to be told using print() statements.
 
--dynamic user prompt should display current health, active attack and combat status
+<!-- -dynamic user prompt should display current health, active attack, weapon -->
 
 <!-- -player must be able to traverse a 10x10 grid of manually generated 'locations' -->
 <!-- --persistent dict of locations keyed by coordinates -->
@@ -29,9 +29,10 @@ As a user, I want an engaging story to be told using print() statements.
 --each time player moves to one of these locations, a func displays entities in the room
 --if other entity is an enemy, player movement is suspended by combat
 
-As a user, I want Hercules (and each enemy), to have health, attack power, and a List of attack names saved in a Dictionary.
+<!-- As a user, I want Hercules (and each enemy), to have health, attack power, and a List of attack names saved in a Dictionary. -->
 
--attack power will be determined by Hercules'/enemy's active weapon
+<!-- -attack power will be determined by Hercules'/enemy's active weapon -->
+
 --Hercules will upgrade their attack power/weapon after killing enemies
 --attacks can either fail or crit based on D20 roll (1 = fail, 20 = crit)
 
@@ -40,15 +41,15 @@ As a user, I want Hercules (and each enemy), to have health, attack power, and a
 <!-- --gladius: 5 -->
 <!-- --falx: 10 -->
 
--attack options: AP bonus (cooldown)
---swing: 0 (2s)
---thrust: +2 (3s)
---SMASH: +7 (10s)
+<!-- -attack options: AP bonus (cooldown) -->
+<!-- --swing: 0 (2s) -->
+<!-- --thrust: +2 (3s) -->
+<!-- --SMASH: +7 (10s) -->
 
-As a user, I want the ability to select Hercules’ attack using a menu prompt.
+<!-- As a user, I want the ability to select Hercules’ attack using a menu prompt. -->
 
--user can enter commands to change the active attack
---attack names will serve as the commands to switch attack type
+<!-- -user can enter commands to change the active attack -->
+<!-- --attack names will serve as the commands to switch attack type -->
 
 As a user, I want the foe’s attack to be chosen at random.
 
