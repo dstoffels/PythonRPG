@@ -12,7 +12,7 @@ THE ROAD TO OLYMPUS
 
 > '''
 
-MAIN_MENU_ERR_MSG = 'Select from options 1-3'
+MAIN_MENU_ERR_MSG = 'Select from options 1-3:  '
 
 NEW_GAME_INTRO = '''You are Hercules, the greatest of the Greek Heroes! You have been tasked by King
 Eurystheus to slay the vicious Nemean Lion, defeat the impossible nine-headed
@@ -31,3 +31,23 @@ TAUNT4 = 'Your father cannot save you now!'
 TAUNT5 = 'Xena was better!'
 
 TAUNTS = [TAUNT1, TAUNT2, TAUNT3, TAUNT4, TAUNT5]
+
+HOW_TO_PLAY = '''In THE ROAD TO OLYMPUS, you play as the Greek demigod hero, Hercules. You have been tasked
+with ridding the lands of foul beasts and villains.
+Hercules moves between locations using the cardinal directions. When attacking foes, you will lock into combat
+with them until the fight is over. While locked into combat you can choose which type of attack to use: Swing, 
+Thrust or SMASH! With respective attacks having higher cooldown times.
+
+COMMANDS:
+N - move north
+S - move south
+E - move east
+W - move west
+Q - quit game
+A - attack
+L - look
+1 - set SWING attack
+2 - set THRUST attack
+3 - set SMASH attack
+
+Press enter to continue...'''

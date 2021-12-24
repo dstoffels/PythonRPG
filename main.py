@@ -1,5 +1,5 @@
 from InputHandling.handleInput import runInputThread
-from constants import MAIN_MENU, MAIN_MENU_ERR_MSG, NEW_GAME_INTRO
+from constants import HOW_TO_PLAY, MAIN_MENU, MAIN_MENU_ERR_MSG, NEW_GAME_INTRO
 from helpers import validateIntInput
 from locations.locations import LOCATIONS
 from gameState import GameState
@@ -22,7 +22,7 @@ def displayMainMenu():
       case 1:
         RunGame()
       case 2:
-        print('game instructions here') #FIXME: need game instructions
+        input(HOW_TO_PLAY)
       case 3:
         print('\nUntil next time, hero!\n')
         exit()

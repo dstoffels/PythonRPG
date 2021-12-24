@@ -53,7 +53,7 @@ class Location:
   
   def buildDescriptionStr(self, locations):
     return f'''
-{self.title}
+[{self.title}]
 {self.roomDescription}
 {self.obviousPathsStringBuilder(locations)}
 {self.presentEnemyStrBldr()}'''
