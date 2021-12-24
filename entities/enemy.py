@@ -4,6 +4,10 @@ import threading
 from entities.entity import Entity
 from random import randint
 
+from locations.location import Location
+from locations.locations import LOCATIONS
+# from locations.locations import LOCATIONS
+
 
 class Enemy(Entity):
   def attack(self): 
@@ -25,7 +29,8 @@ Your HP Remaining: {self.target.currentHP}
     self.target.weapon = self.weapon
 
   def removeEnemyFromMap(self):
-    self.currentLocation = None
+    LOCATIONS[self.currentLocation].enemy = None
 
   def displayVictoryResults(self):
     print(f'You have defeated {self.name} and aquired a {self.weapon.name}!')
+    self.target.currentLocation.displayDescription(LOCATIONS)

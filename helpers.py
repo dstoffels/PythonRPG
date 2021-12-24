@@ -26,8 +26,7 @@ def validateIntInput(prompt):
     except:
       prompt = MAIN_MENU_ERR_MSG
 
-def changeCoordinates(self, row, col):
-  coords = self.currentLocation.coords
+def changeCoordinates(row, col, coords):
   row = coords[0] + row
   col = coords[1] + col
   return (row, col)

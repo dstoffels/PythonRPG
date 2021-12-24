@@ -22,6 +22,6 @@ class Player(Entity):
     print('GAME OVER... You have been defeated! Press return to continue...')
 
   def move(self, row, col):
-    newCoords = helpers.changeCoordinates(row, col)
+    newCoords = helpers.changeCoordinates(row, col, self.currentLocation.coords)
     self.currentLocation = LOCATIONS[newCoords]
     self.currentLocation.displayDescription(LOCATIONS)

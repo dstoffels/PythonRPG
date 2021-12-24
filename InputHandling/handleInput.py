@@ -12,7 +12,6 @@ def handleUserInput(gameState: GameState):
       print('unknown command')
 
 def runInputThread(gameState):
-  # inputThread = threading.Thread(target= lambda : handleUserInput(gameState)).start()
   handleUserInput(gameState)
   
   
