@@ -16,17 +16,17 @@ def RunGame():
   runInputThread(state)
 
 def displayMainMenu():
-  userInput = validateIntInput(MAIN_MENU)
-
-  match userInput:
-    case 1:
-      RunGame()
-    case 2:
-      print('game instructions here') #FIXME: need game instructions
-    case 3:
-      print('\nUntil next time, hero!\n')
-      exit()
-    case _:
-      print(MAIN_MENU_ERR_MSG) #FIXME: need input validation
+  while True:
+    userInput = validateIntInput(MAIN_MENU)
+    match userInput:
+      case 1:
+        RunGame()
+      case 2:
+        print('game instructions here') #FIXME: need game instructions
+      case 3:
+        print('\nUntil next time, hero!\n')
+        exit()
+      case _:
+        print(MAIN_MENU_ERR_MSG) #FIXME: need input validation
 
 displayMainMenu()

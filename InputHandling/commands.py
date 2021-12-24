@@ -22,5 +22,7 @@ COMMANDS = {
   'thrust': lambda state : execute.handleSelectAttack(1, state),
   '3': lambda state : execute.handleSelectAttack(2, state),
   'smash': lambda state : execute.handleSelectAttack(2, state),
+  'a': execute.handleAttack,
+  'attack': execute.handleAttack
 }
 

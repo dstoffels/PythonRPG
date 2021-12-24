@@ -47,7 +47,7 @@ class Location:
 
   def presentEnemyStrBldr(self):
     if(self.enemy != None):
-      return f'ALSO HERE: {self.enemy.name}\n'
+      return f'You also see: {self.enemy.name}\n'
     else:
       return ''
   

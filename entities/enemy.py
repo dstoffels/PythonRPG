@@ -1,18 +1,31 @@
+import threading
+import time
+import threading
 from entities.entity import Entity
 from random import randint
 
-class Enemy(Entity):
-  def __init__(self, name='', currentLocation=(0, 0), maxHp=100):
-      super().__init__(name=name, currentLocation=currentLocation, maxHp=maxHp)
 
+class Enemy(Entity):
   def attack(self): 
+    time.sleep(2)
     self.selectAttack(randint(0,2))
-    d20 = randint(1,20)
-    match d20:
-      case 1:
-        print('Attack failed')
-      case 20:
-        print('Critical Hit!')
-      case _:
-        print('normal attack') #
-    # print('baddie attacks') #FIXME: need list of different attacks, needs variable attack timer that attacks player only when player is in same location
+    threading.Thread(target=self._engageCombat).start()
+
+  def displayCombatResults(self, ap):
+      print(f'''{self.name} hit you for {ap} damage with a {self.activeAttack.name} attack!
+Your HP Remaining: {self.target.currentHP}
+''')
+
+  def die(self):
+    self.upgradePlayerWeapon()
+    self.removeEnemyFromMap()
+    self.displayVictoryResults()
+  
+  def upgradePlayerWeapon(self):
+    self.target.weapon = self.weapon
+
+  def removeEnemyFromMap(self):
+    self.currentLocation = None
+
+  def displayVictoryResults(self):
+    print(f'You have defeated {self.name} and aquired a {self.weapon.name}!')

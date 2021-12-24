@@ -24,10 +24,9 @@ As a user, I want an engaging story to be told using print() statements.
 <!-- --player can move N,S,E or W -->
 <!-- --when player moves, the location description is displayed to user -->
 
--need to display other entities at locations
---persistent list of all enemy entities and their locations
---each time player moves to one of these locations, a func displays entities in the room
---if other entity is an enemy, player movement is suspended by combat
+<!-- -need to display other entities at locations -->
+<!-- --persistent list of all enemy entities and their locations -->
+<!-- --each time player moves to one of these locations, a func displays entities in the room -->
 
 <!-- As a user, I want Hercules (and each enemy), to have health, attack power, and a List of attack names saved in a Dictionary. -->
 

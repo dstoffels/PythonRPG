@@ -5,5 +5,5 @@ class Weapon:
 
 FISTS = Weapon('Fists', 3)
 GLADIUS = Weapon('Gladius', 5)
-MJOLNIR = Weapon('Mjolnir', 7)
+BATTLE_AXE = Weapon('Battle Axe', 7)
 FALX = Weapon('Falx', 10)

@@ -8,7 +8,7 @@ STARTING_LOCATION = (1,6)
 class GameState:
   def __init__(self):
     self.isActive = True
-    self.player = Player('Hercules', LOCATIONS[STARTING_LOCATION])
+    self.player = Player('Hercules', LOCATIONS[STARTING_LOCATION], gameState=self)
     self.placeEnemiesOnMap()
 
   def placeEnemiesOnMap(self):
@@ -21,3 +21,6 @@ class GameState:
     attack = self.player.activeAttack.name
     attackPower = self.player.weapon.attackPower + self.player.activeAttack.APbonus
     return f'[HP: {health} | WEP: {weapon} | ATT: {attack} | AP: {attackPower}] > '
+
+  def endGame(self):
+    self.isActive = False
