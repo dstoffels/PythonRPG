@@ -26,13 +26,10 @@ def validateIntInput(prompt):
     except:
       prompt = MAIN_MENU_ERR_MSG
 
-# def buildOptionsString():
-#   optionsString = ''
-#   i = 1
-
-#   for option in USER_OPTIONS:
-#     optionsString += f'''{i}) {option}\n'''
-#     i += 1
-#   return optionsString + '\nChoose an option: '
+def changeCoordinates(self, row, col):
+  coords = self.currentLocation.coords
+  row = coords[0] + row
+  col = coords[1] + col
+  return (row, col)
 
 

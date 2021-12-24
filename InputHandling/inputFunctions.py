@@ -12,14 +12,10 @@ def handleMove(direction, state: GameState):
 
   if(paths.__contains__(direction)):
     match direction:
-      case 'North':
-        player.moveNorth()
-      case 'South':
-        player.moveSouth()
-      case 'East':
-        player.moveEast()
-      case 'West':
-        player.moveWest()
+      case 'North': player.move(-1, 0)
+      case 'South': player.move(1, 0)
+      case 'East': player.move(0, 1)
+      case 'West': player.move(0, -1)
   else:
     print('You cannot go that direction.\n')
 
