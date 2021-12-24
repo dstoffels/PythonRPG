@@ -19,8 +19,9 @@ class Player(Entity):
     print('Your attack fails...')
   
   def die(self):
+    print('You have been defeated! Press return to continue...')
     self.gameState.endGame()
-    print('GAME OVER... You have been defeated! Press return to continue...')
+    self.target.resetHP()
 
   def move(self, row, col):
     newCoords = helpers.changeCoordinates(row, col, self.currentLocation.coords)
