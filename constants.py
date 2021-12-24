@@ -23,3 +23,11 @@ Congratulations! You have guided Hercules to victory!!
 King Eurystheus has announced a feast in his honor!
 Roll credits... Oh wait, I wasn't suppose to say that.
 Press enter to return to the main menu... '''
+
+TAUNT1 = 'I shall feast upon your bones, Hercules!'
+TAUNT2 = 'Your death awaits...'
+TAUNT3 = 'Hades is calling, demigod!'
+TAUNT4 = 'Your father cannot save you now!'
+TAUNT5 = 'Xena was better!'
+
+TAUNTS = [TAUNT1, TAUNT2, TAUNT3, TAUNT4, TAUNT5]

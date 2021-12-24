@@ -35,16 +35,13 @@ class Entity(ABC):
   def displayFailedAttack():
     pass
 
-  def displayCriticalHit(self):
-    print('CRITICAL HIT!')
-
   def getAttackPower(self):
     return self.weapon.attackPower + self.activeAttack.APbonus
 
   def _engageCombat(self, attackSelector = lambda : 0):
     self.startCombat()
 
-    while self.target.isAlive and self.isAlive:
+    while self.target.isAlive and self.isAlive and self.gameState.isActive:
       attackSelector()
       self.critFailCheck(self.damageTargetAndDisplay)
       time.sleep(self.activeAttack.cooldown)
@@ -53,7 +50,6 @@ class Entity(ABC):
 
   def startCombat(self):
     self.isEngagedInCombat = True
-    print('COMBAT BEGINS!')
 
   def critFailCheck(self, damageTarget):
     d20 = randint(1, 20)
@@ -71,7 +67,7 @@ class Entity(ABC):
     self.displayCombatResults(ap)
 
   def endCombat(self):
-    self.isEngagedInCombat = False
+    self.isEngagedInCombat = self.target.isEngagedInCombat = False
     if(not self.isAlive):
       self.die()
 
@@ -86,3 +82,6 @@ class Entity(ABC):
 
   def resetHP(self):
     self.currentHP = self.maxHP
+
+  def displayCriticalHit(self):
+    print('\nCRITICAL HIT!\r')

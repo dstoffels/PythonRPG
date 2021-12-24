@@ -3,6 +3,7 @@ from constants import N, S, E, W
 
 # a dictionary of user commands as keys for the functions they execute, all functions must take a GameState object as an argument
 COMMANDS = {
+  '' : lambda state: None,
   'q': execute.handleQuit,
   'quit': execute.handleQuit,
   'exit': execute.handleQuit,

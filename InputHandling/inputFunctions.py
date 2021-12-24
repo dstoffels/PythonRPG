@@ -1,4 +1,5 @@
 from gameState import GameState
+from helpers import tryMove
 from locations.locations import LOCATIONS
 
 def handleQuit(gameState: GameState):
@@ -8,16 +9,10 @@ def handleQuit(gameState: GameState):
 
 def handleMove(direction, state: GameState):
   player = state.player
-  paths = player.currentLocation.getPossibleDirections(LOCATIONS)
-
-  if(paths.__contains__(direction)):
-    match direction:
-      case 'North': player.move(-1, 0)
-      case 'South': player.move(1, 0)
-      case 'East': player.move(0, 1)
-      case 'West': player.move(0, -1)
+  if(state.player.isEngagedInCombat):
+    print(f'{player.target.name} blocks your escape!\n')
   else:
-    print('You cannot go that direction.\n')
+    tryMove(player, direction)
 
 def handleLook(gameState: GameState):
   gameState.player.currentLocation.displayDescription(LOCATIONS)
