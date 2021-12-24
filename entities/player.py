@@ -7,15 +7,16 @@ class Player(Entity):
   def attack(self):
     if(self.currentLocation.enemy != None):
       self.target = self.currentLocation.enemy
-      print('COMBAT BEGINS!')
       threading.Thread(target=self._engageCombat).start()
-      self.target.target = self
-      self.target.attack()
+      self.enemyEngagesPlayer()
     else:
       print('There are no opponents here to attack!\n')
 
   def displayCombatResults(self, ap):
-      print(f'You hit {self.target.name} for {ap} damage!\n')
+      print(f'You hit {self.target.name} for {ap} damage!')
+
+  def displayFailedAttack(self):
+    print('Your attack fails...')
   
   def die(self):
     self.gameState.endGame()
@@ -25,3 +26,7 @@ class Player(Entity):
     newCoords = helpers.changeCoordinates(row, col, self.currentLocation.coords)
     self.currentLocation = LOCATIONS[newCoords]
     self.currentLocation.displayDescription(LOCATIONS)
+
+  def enemyEngagesPlayer(self):
+    self.target.target = self
+    self.target.attack()

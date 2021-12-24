@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 from random import randint
+import time
+
 from combat.attacks import ATTACKS, SWING, Attack
 from combat.weapons import FISTS, Weapon
 from locations.location import Location
-import time
 
 class Entity(ABC):
   def __init__(self, name='', currentLocation = Location(), maxHp = 100, activeAttack = SWING, weapon = FISTS, gameState = None):
@@ -30,20 +31,49 @@ class Entity(ABC):
   def die(self):
     pass
 
+  @abstractmethod
+  def displayFailedAttack():
+    pass
+
+  def displayCriticalHit(self):
+    print('CRITICAL HIT!')
+
   def getAttackPower(self):
     return self.weapon.attackPower + self.activeAttack.APbonus
 
-  def _engageCombat(self):
-    self.isEngagedInCombat = True
+  def _engageCombat(self, attackSelector = lambda : 0):
+    self.startCombat()
 
     while self.target.isAlive and self.isAlive:
-      ap = self.getAttackPower()
-      self.target.takeDamage(ap)
-      self.displayCombatResults(ap)
+      attackSelector()
+      self.critFailCheck(self.damageTargetAndDisplay)
       time.sleep(self.activeAttack.cooldown)
     
     self.endCombat()
 
+  def startCombat(self):
+    self.isEngagedInCombat = True
+    print('COMBAT BEGINS!')
+
+  def critFailCheck(self, damageTarget):
+    d20 = randint(1, 20)
+    if(d20 == 1):
+      self.displayFailedAttack()
+    elif (d20 == 20):
+      self.displayCriticalHit()
+      damageTarget(10)
+    else:
+      damageTarget()
+
+  def damageTargetAndDisplay(self, critBonus = 0):
+    ap = self.getAttackPower() + critBonus
+    self.target.takeDamage(ap)
+    self.displayCombatResults(ap)
+
+  def endCombat(self):
+    self.isEngagedInCombat = False
+    if(not self.isAlive):
+      self.die()
 
   def selectAttack(self, index) -> Attack:
     self.activeAttack = ATTACKS[index]
@@ -56,8 +86,3 @@ class Entity(ABC):
 
   def resetHP(self):
     self.currentHP = self.maxHP
-
-  def endCombat(self):
-    self.isEngagedInCombat = False
-    if(not self.isAlive):
-      self.die()
