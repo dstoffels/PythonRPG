@@ -82,6 +82,7 @@ class Entity(ABC):
 
   def resetHP(self):
     self.currentHP = self.maxHP
+    self.isAlive = True
 
   def displayCriticalHit(self):
     print('\nCRITICAL HIT!\r')

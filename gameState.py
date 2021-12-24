@@ -15,6 +15,7 @@ class GameState:
     for enemy in ENEMIES:
       LOCATIONS[enemy.currentLocation].placeEnemy(enemy)
       enemy.gameState = self
+      enemy.resetHP()
 
   def commandPrompt(self):
     health = self.player.currentHP
