@@ -17,7 +17,9 @@ class Player(Entity):
       print('There are no opponents here to attack!\n')
 
   def displayCombatResults(self, ap):
-      print(f'\nYou hit {self.target.name} for {ap} damage!')
+      print(f'''
+You hit {self.target.name} for {ap} damage with a {self.activeAttack.name} attack!
+[Opponent HP: {self.target.currentHP} | Cooldown Time: {self.activeAttack.cooldown}]''')
 
   def displayFailedAttack(self):
     print('\nYour attack fails...')

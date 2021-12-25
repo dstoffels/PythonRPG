@@ -34,9 +34,10 @@ TAUNTS = [TAUNT1, TAUNT2, TAUNT3, TAUNT4, TAUNT5]
 
 HOW_TO_PLAY = '''In THE ROAD TO OLYMPUS, you play as the Greek demigod hero, Hercules. You have been tasked
 with ridding the lands of foul beasts and villains.
-Hercules moves between locations using the cardinal directions. When attacking foes, you will lock into combat
+Hercules moves between locations using four cardinal directions. When attacking foes, you will lock into combat
 with them until the fight is over. While locked into combat you can choose which type of attack to use: Swing, 
-Thrust or SMASH! With respective attacks having higher cooldown times.
+Thrust or SMASH! With respective attacks having higher cooldown times and greater Attack Power.
+Your weapon adds to your Attack Power and there are three weapons: Gladius (5), Battle Axe (7) & Falx (10).
 
 COMMANDS:
 N - move north

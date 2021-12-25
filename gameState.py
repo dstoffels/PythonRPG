@@ -18,10 +18,10 @@ class GameState:
 
   def commandPrompt(self):
     health = self.player.currentHP
-    weapon = self.player.weapon.name
-    attack = self.player.activeAttack.name
+    weapon = self.player.weapon
+    attack = self.player.activeAttack
     attackPower = self.player.weapon.attackPower + self.player.activeAttack.APbonus
-    return f'[HP: {health} | WEP: {weapon} | ATT: {attack} | AP: {attackPower}]\n> '
+    return f'STATUS: [HP: {health} | Weapon: {weapon.name} (AP: {weapon.attackPower}) | Attack: {attack.name} (AP: {attack.APbonus} - Cooldown: {attack.cooldown}) | Attack Power: {attackPower}]\n> '
 
   def endGame(self):
     self.isActive = False

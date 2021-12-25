@@ -21,9 +21,8 @@ class Enemy(Entity):
 
   def displayCombatResults(self, ap):
       print(f'''
-{self.name} hit you for {ap} damage with a {self.activeAttack.name} attack!
-Your HP Remaining: {self.target.currentHP}
-''', end='')
+{self.name} hit you for {ap} damage with a {self.activeAttack.name} attack! 
+[Your HP: {self.target.currentHP}]''')
 
   def displayFailedAttack(self):
     print(f'\n{self.name} misses you like a storm trooper...')
@@ -41,7 +40,7 @@ Your HP Remaining: {self.target.currentHP}
     LOCATIONS[self.currentLocation].enemy = None
 
   def displayVictoryResults(self):
-    print(f'\nYou have defeated {self.name} and aquired a {self.weapon.name}!')
+    print(f'\nYou have defeated {self.name} and aquired a {self.weapon.name}! Your health has been restored.')
     self.target.currentLocation.displayDescription(LOCATIONS)
   
   def winGameCheck(self):
