@@ -1,11 +1,12 @@
+from constants import HOW_TO_PLAY
 from gameState import GameState
 from helpers import tryMove
 from locations.locations import LOCATIONS
 
-def handleQuit(gameState: GameState):
+def handleQuit(state: GameState):
   userInput = str.lower(input('Are you sure you want to quit? All progress will be lost. > '))
   if(userInput == 'y' or userInput == 'yes'):
-    gameState.endGame()
+    state.endGame()
 
 def handleMove(direction, state: GameState):
   player = state.player
@@ -17,13 +18,16 @@ def handleMove(direction, state: GameState):
 def handleLook(gameState: GameState):
   gameState.player.currentLocation.displayDescription(LOCATIONS)
 
-def handleSelectAttack(attackIndex, gameState: GameState):
-  newAttack = gameState.player.selectAttack(attackIndex)
+def handleSelectAttack(attackIndex, state: GameState):
+  newAttack = state.player.selectAttack(attackIndex)
   print(f'Switching to {newAttack.name} attack.\n')
 
-def handleAttack(gameState: GameState):
-  player = gameState.player
+def handleAttack(state: GameState):
+  player = state.player
   if(not player.isEngagedInCombat):
     player.attack()
   else:
     print('Already engaged in combat!\n')
+
+def handleHelp(state: GameState):
+  input(HOW_TO_PLAY)

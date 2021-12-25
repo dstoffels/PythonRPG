@@ -48,7 +48,7 @@ Your HP Remaining: {self.target.currentHP}
     if(self.remainingEnemiesCheck()):
       self.displayVictoryResults()
     else:
-      print(WIN_GAME_MSG)
+      self.winGame()
 
   def remainingEnemiesCheck(self):
     for location in LOCATIONS.values():
@@ -57,3 +57,6 @@ Your HP Remaining: {self.target.currentHP}
         return True
     return False
     
+  def winGame(self):
+      self.gameState.isActive = False
+      print(WIN_GAME_MSG)

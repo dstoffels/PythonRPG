@@ -1,4 +1,3 @@
-from types import CellType
 from entities.enemies import ENEMIES
 from entities.player import Player
 from locations.locations import LOCATIONS
@@ -22,7 +21,7 @@ class GameState:
     weapon = self.player.weapon.name
     attack = self.player.activeAttack.name
     attackPower = self.player.weapon.attackPower + self.player.activeAttack.APbonus
-    return f'[HP: {health} | WEP: {weapon} | ATT: {attack} | AP: {attackPower}] '
+    return f'[HP: {health} | WEP: {weapon} | ATT: {attack} | AP: {attackPower}]\n> '
 
   def endGame(self):
     self.isActive = False

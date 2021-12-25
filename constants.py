@@ -49,5 +49,6 @@ L - look
 1 - set SWING attack
 2 - set THRUST attack
 3 - set SMASH attack
+H - show this How-To-Play
 
 Press enter to continue...'''

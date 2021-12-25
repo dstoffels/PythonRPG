@@ -27,6 +27,6 @@ def displayMainMenu():
         print('\nUntil next time, hero!\n')
         exit()
       case _:
-        print(MAIN_MENU_ERR_MSG) #FIXME: need input validation
+        print(MAIN_MENU_ERR_MSG)
 
 displayMainMenu()
