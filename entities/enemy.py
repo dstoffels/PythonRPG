@@ -34,7 +34,7 @@ class Enemy(Entity):
     self.target.resetHP()
   
   def upgradePlayerWeapon(self):
-    self.target.weapon = self.weapon
+    self.target.upgradeWeapon(self.weapon)
 
   def removeEnemyFromMap(self):
     LOCATIONS[self.currentLocation].enemy = None

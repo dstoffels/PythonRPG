@@ -1,5 +1,6 @@
 from random import randint
 import time
+from combat.weapons import Weapon
 from constants import TAUNTS
 from entities.entity import Entity
 import helpers
@@ -19,7 +20,7 @@ class Player(Entity):
   def displayCombatResults(self, ap):
       print(f'''
 You hit {self.target.name} for {ap} damage with a {self.activeAttack.name} attack!
-[Opponent HP: {self.target.currentHP} | Cooldown Time: {self.activeAttack.cooldown}]''')
+[Opponent HP: {self.target.currentHP} | Cooldown Time: {self.activeAttack.cooldown}] sec''')
 
   def displayFailedAttack(self):
     print('\nYour attack fails...')
@@ -28,6 +29,8 @@ You hit {self.target.name} for {ap} damage with a {self.activeAttack.name} attac
     print('\nYou have been defeated! Press return to continue...')
     self.gameState.endGame()
     self.target.resetHP()
+
+  
 
   def enemyEngagesPlayer(self):
     self.target.target = self

@@ -86,3 +86,6 @@ class Entity(ABC):
 
   def displayCriticalHit(self):
     print('\nCRITICAL HIT!\r')
+
+  def upgradeWeapon(self, weapon: Weapon):
+    self.weapon = weapon if weapon.attackPower > self.weapon.attackPower else self.weapon
